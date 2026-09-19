@@ -8,7 +8,7 @@ export default function Category() {
             <p className="text-xs font-archivo text-secondary">
               EXPLORE OUR RANGE
             </p>
-            <h2 className="text-4xl font-archivo font-bold">
+            <h2 className="text-3xl font-archivo font-bold">
               FEATU RED DISCIPLINES
             </h2>
           </div>

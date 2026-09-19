@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
 
-
 export default function Hero() {
   return (
     <main className="px-16">
@@ -25,7 +24,7 @@ export default function Hero() {
 
           {/* Button section */}
           <div className="flex gap-4">
-            <button className="text-base font-archivo font-bold border border-gray-200 px-4 py-2 rounded-lg bg-secondary flex items-center gap-2 cursor-pointer">
+            <button className="text-base font-archivo font-bold border border-gray-200 px-4 py-2 rounded-lg bg-secondary flex items-center gap-2 cursor-pointer text-white">
               SHOP NOW <ArrowRight size={18} />
             </button>
             <button className="text-base font-archivo font-bold border border-gray-200 px-4 py-2 rounded-lg cursor-pointer">
