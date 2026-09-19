@@ -1,7 +1,7 @@
 import { ArrowRight } from "lucide-react";
-import React from "react";
 
-export default function Home() {
+
+export default function Hero() {
   return (
     <main className="px-16">
       {/* Hero Section */}

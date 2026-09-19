@@ -1,11 +1,13 @@
+import Category from "./features/home/Category";
+import Hero from "./features/home/Hero";
 import Header from "./layouts/header";
-import Home from "./pages/home";
 
 export default function App() {
   return (
     <div>
-     <Header/>
-     <Home/>
+      <Header />
+      <Hero />
+      <Category/>
     </div>
-  )
+  );
 }
