@@ -14,7 +14,7 @@ export default function Header() {
         </div>
       </section>
 
-      <nav className="flex items-center justify-between px-16 gap-4 py-2">
+      <nav className="flex items-center justify-between px-16 gap-4 py-4 border-b border-gray-300">
         {/* badge or logo */}
         <div className="flex items-center gap-2">
           <div className="relative px-2 py-1 w-8 h-8 bg-secondary rounded-sm rotate-45">

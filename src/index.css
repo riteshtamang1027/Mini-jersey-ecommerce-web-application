@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
+
+@theme{
+  --font-archivo: "Archivo", sans-serif;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -19,3 +24,9 @@
   --muted-text: oklch(0.7107 0.0351 256.79);
   --muted-background: oklch(0.2795 0.0368 260.03);
 }
+
+
+/* h1{
+  font-size: 64px;
+  font-weight: bold;
+} */
