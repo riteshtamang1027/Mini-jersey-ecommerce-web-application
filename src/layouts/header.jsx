@@ -1,4 +1,5 @@
 import { CircleUser, ShoppingCart, Truck } from "lucide-react";
+import BrandMark from "../components/BrandMark";
 export default function Header() {
   return (
     <header className="">
@@ -16,14 +17,8 @@ export default function Header() {
 
       <nav className="flex items-center justify-between px-16 gap-4 py-4 border-b border-gray-300">
         {/* badge or logo */}
-        <div className="flex items-center gap-2">
-          <div className="relative px-2 py-1 w-8 h-8 bg-secondary rounded-sm rotate-45">
-            <span className="absolute text-2xl font-bold top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              K
-            </span>
-          </div>
-          <span className="text-3xl font-bold">KITHAUS</span>
-        </div>
+  
+        <BrandMark/>
         {/* actual pages nav links */}
         <div className="flex items-center gap-8">
           <span>Home</span>
