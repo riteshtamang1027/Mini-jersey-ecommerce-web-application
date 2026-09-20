@@ -2,7 +2,7 @@ import { CircleUser, ShoppingCart, Truck } from "lucide-react";
 import BrandMark from "../components/BrandMark";
 export default function Header() {
   return (
-    <header className="">
+    <header className=" bg-gray-100">
       {/* upper header section */}
       <section className=" w-full bg-surface">
         <div className="flex items-center justify-between px-16 py-1 text-xs font-semibold text-gray-600">
