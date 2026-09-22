@@ -1,4 +1,5 @@
 import BrandMark from "../components/BrandMark";
+import SocialMedia from "../components/SocialMedia";
 
 const footerLinks = [
   {
@@ -38,7 +39,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <main className="font-archivo px-16 pt-4 border-t border-gray-200">
+    <main className="font-archivo px-16 pt-8 mt-8 border-t border-gray-200">
       <footer>
         <section className="grid grid-cols-4 gap-8">
           {/* Brand */}
@@ -51,13 +52,14 @@ export default function Footer() {
               global terrace culture.
             </p>
 
-            <div>social media links</div>
+          {/* Social media links */}
+           <SocialMedia/>
           </div>
 
           {/* Footer Links */}
           {footerLinks.map((section) => (
             <div key={section.title} className="w-full">
-              <h3 className="mb-5 text-[20px] font-extrabold uppercase leading-none tracking-[-0.5px] text-secondary">
+              <h3 className="mb-5 text-base font-bold leading-none  text-secondary">
                 {section.title}
               </h3>
 
@@ -66,7 +68,7 @@ export default function Footer() {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-[17px] font-normal leading-none text-[#94a3b8] transition-colors duration-200 hover:text-white"
+                      className="text-sm font-normal leading-none text-muted-text transition-colors duration-200 "
                     >
                       {link}
                     </a>
@@ -77,11 +79,11 @@ export default function Footer() {
           ))}
         </section>
 
-          <section className="flex items-center justify-center border-t border-gray-200 py-4 mt-8">
-            <p className="text-xs text-muted-text">© 2026 KITHAUS GLOBAL LTD. ALL RIGHTS RESERVED.</p>
-
-          </section>
-
+        <section className="flex items-center justify-center border-t border-gray-200 py-4 mt-8">
+          <p className="text-xs text-muted-text">
+            © 2026 KITHAUS GLOBAL LTD. ALL RIGHTS RESERVED.
+          </p>
+        </section>
       </footer>
     </main>
   );
