@@ -1,7 +1,8 @@
-import Category from "./features/home/Category";
-import FeatureProduct from "./features/home/FeatureProduct";
+import Category from "./features/category/Category";
+import FeatureProduct from "./features/products/FeatureProduct";
 import Hero from "./features/home/Hero";
 import RetroVault from "./features/home/RetroVault";
+import NewProductCard from "./features/products/NewProductCard";
 
 
 export default function App() {
@@ -12,6 +13,7 @@ export default function App() {
       <Category/>
       <FeatureProduct/>
       <RetroVault/>
+      <NewProductCard/>
     
     </div>
   );
