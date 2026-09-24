@@ -11,7 +11,7 @@ export default function NewsLetter() {
         </p>
         <div className="flex items-center gap-2 justify-between w-full ">
             <input className="border border-gray-200  rounded-lg focus:outline-none py-2 px-4 text-sm w-92" type="text" placeholder="Enter your email address" />
-            <button className="px-4 py-2 rounded-lg bg-secondary text-white text-sm cursor-pointer">SUBSCRIBE</button>
+            <button className="px-4 py-2 rounded-lg bg-secondary text-white text-sm cursor-pointer font-semibold">SUBSCRIBE</button>
         </div>
       </section>
     </main>
