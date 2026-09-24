@@ -3,6 +3,7 @@ import FeatureProduct from "./features/products/FeatureProduct";
 import Hero from "./features/home/Hero";
 import RetroVault from "./features/home/RetroVault";
 import NewProductCard from "./features/products/NewProductCard";
+import NewsLetter from "./features/home/NewsLetter";
 
 
 export default function App() {
@@ -14,7 +15,7 @@ export default function App() {
       <FeatureProduct/>
       <RetroVault/>
       <NewProductCard/>
-    
+      <NewsLetter/>
     </div>
   );
 }
