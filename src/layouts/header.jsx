@@ -4,7 +4,7 @@ import { NavLink } from "react-router";
 
 const navLink = [
   {
-    link: "#",
+    link: "/",
     label: "Home",
   },
   {

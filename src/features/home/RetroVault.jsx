@@ -8,11 +8,11 @@ export default function RetroVault() {
   return (
     <main className="px-16 mt-16">
       <section className="flex items-center w-full gap-4 h-92 overflow-hidden  font-archivo">
-        <div className="w-1/5 flex flex-col gap-4">
+        <div className="w-1/3 flex flex-col gap-4">
           <p className="px-2 py-1 border border-secondary rounded-sm text-xs text-secondary w-max">
             EST.1970-1999
           </p>
-          <h3 className="text-4xl font-extrabold">
+          <h3 className="text-4xl font-extrabold scale-y-120">
             THE RETRO <span className="text-secondary">VAULT</span>
           </h3>
           <p className="text-sm text-muted-text">
@@ -24,7 +24,7 @@ export default function RetroVault() {
             BROWSE VAULT DIRECTORY
           </button>
         </div>
-        <div className="flex items-center w-4/5">
+        <div className="flex items-center ">
           {vintageImg.map((img) => (
             <img className="w-full h-92 object-cover" src={img} alt="" />
           ))}
