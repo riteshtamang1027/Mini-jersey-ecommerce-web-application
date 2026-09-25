@@ -1,8 +1,10 @@
+import LeagueFilter from "./LeagueFilter";
+
 
 export default function SideBar() {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+    <LeagueFilter/>
+    </>
+  );
 }

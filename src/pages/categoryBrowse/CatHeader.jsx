@@ -1,6 +1,6 @@
 export default function CatHeader() {
   return (
-    <main className=" px-16 mt-8">
+    <main>
       <section className="font-archivo flex items-center justify-between">
         <div className="flex flex-col gap-4">
           <h2 className="text-3xl font-extrabold scale-y-120">
