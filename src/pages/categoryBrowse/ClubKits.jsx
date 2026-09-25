@@ -1,6 +1,7 @@
 import CatHeader from "./CatHeader";
 import ClubKitsProduct from "./ClubKitsProduct";
 import Filters from "./Filters";
+import Pagination from "./Pagination";
 
 export default function ClubKits() {
   return (
@@ -15,7 +16,10 @@ export default function ClubKits() {
 
         {/* Products - takes remaining width */}
         <main className="min-w-0 flex-1 ">
-          <ClubKitsProduct />
+          <div className="flex flex-col gap-4 items-center justify-center">
+            <ClubKitsProduct />
+            <Pagination />
+          </div>
         </main>
       </div>
     </div>
