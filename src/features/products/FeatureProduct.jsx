@@ -1,5 +1,37 @@
 import { ArrowLeft, ArrowRight, Plus } from "lucide-react";
 
+const product = [
+  {
+    image: "https://imgs.search.brave.com/oY3Ya_kZhDOYwsDcf0w5ViitLoVVwbVPhuOoAKR9f2I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL3Ro/dW1icy9pbWFnZXMv/Zy82QWtBQWVTdzlK/Rm9HS3NML3MtbDUw/MC5qcGc",
+    kitsName: "Real Madrid",
+    arrivalDate: "2017/18",
+    type:"MR. Champion",
+    price: "130.0",
+  },
+  {
+    image: "https://imgs.search.brave.com/vo-tjgI6Bf612ccZuhCljGDDa8O2SbGjram5XyQYYA0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/bWVkaWEuYW1wbGll/bmNlLm5ldC9pL2Zy/YXNlcnNkZXYvMzc4/MzUyMDNfbz9mbXQ9/YXV0byZ1cHNjYWxl/PWZhbHNlJnc9MzQ1/Jmg9MzQ1JnY9MSZz/bT1jJiRoLXR0bCQ",
+    kitsName: "Liverpool",
+    arrivalDate: "2026/27",
+    type:"Away Jersey",
+    price: "110.0",
+  },
+  {
+    image: "https://imgs.search.brave.com/1sUr7L0IMaM0L0ePCzMkP_3CF5Yqzjr4z3KP89MtXVQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jdWx0/dXJraXRzLmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9pbWFnZV8y/MDUxYmM2ZS0zZmJk/LTQ2NWYtOWJjNC0x/N2E5OTRiODc2OGUu/cG5nP3Y9MTY3MDU2/NDQ2MiZ3aWR0aD0x/NDQ1",
+    kitsName: "Sporting CP",
+    arrivalDate: "2001/02",
+    type:"Home Jersey",
+    price: "126.0",
+  },
+  {
+    image: "https://imgs.search.brave.com/b5tZAZ_6C1BXe0tHmp50Q-AjbgR4qiI4Ziipl_VPxDQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Y2xhc3NpY2Zvb3Ri/YWxsc2hpcnRzLmNv/LnVrL2Nkbi1jZ2kv/aW1hZ2Uvdz0zNjAs/aD0zNjAscT0xMDAs/Zml0PXBhZCxmPXdl/YnAvcHViL21lZGlh/L2NhdGFsb2cvcHJv/ZHVjdC8vNC8wLzQw/NzAwMzMyMjE3MTYt/MV9kcHF4ZXFrbHRo/M2ZtaHRhLmpwZw",
+    kitsName: "AC Milan",
+    arrivalDate: "2026/27",
+    type:"Home Jersey",
+    price: "116.0",
+  },
+];
+
+
 export default function FeatureProduct() {
   return (
     <>
@@ -62,33 +94,3 @@ export default function FeatureProduct() {
   );
 }
 
-const product = [
-  {
-    image: "https://imgs.search.brave.com/oY3Ya_kZhDOYwsDcf0w5ViitLoVVwbVPhuOoAKR9f2I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLmVi/YXlpbWcuY29tL3Ro/dW1icy9pbWFnZXMv/Zy82QWtBQWVTdzlK/Rm9HS3NML3MtbDUw/MC5qcGc",
-    kitsName: "Real Madrid",
-    arrivalDate: "2017/18",
-    type:"MR. Champion",
-    price: "130.0",
-  },
-  {
-    image: "https://imgs.search.brave.com/vo-tjgI6Bf612ccZuhCljGDDa8O2SbGjram5XyQYYA0/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jZG4u/bWVkaWEuYW1wbGll/bmNlLm5ldC9pL2Zy/YXNlcnNkZXYvMzc4/MzUyMDNfbz9mbXQ9/YXV0byZ1cHNjYWxl/PWZhbHNlJnc9MzQ1/Jmg9MzQ1JnY9MSZz/bT1jJiRoLXR0bCQ",
-    kitsName: "Liverpool",
-    arrivalDate: "2026/27",
-    type:"Away Jersey",
-    price: "110.0",
-  },
-  {
-    image: "https://imgs.search.brave.com/1sUr7L0IMaM0L0ePCzMkP_3CF5Yqzjr4z3KP89MtXVQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jdWx0/dXJraXRzLmNvbS9j/ZG4vc2hvcC9wcm9k/dWN0cy9pbWFnZV8y/MDUxYmM2ZS0zZmJk/LTQ2NWYtOWJjNC0x/N2E5OTRiODc2OGUu/cG5nP3Y9MTY3MDU2/NDQ2MiZ3aWR0aD0x/NDQ1",
-    kitsName: "Sporting CP",
-    arrivalDate: "2001/02",
-    type:"Home Jersey",
-    price: "126.0",
-  },
-  {
-    image: "https://imgs.search.brave.com/b5tZAZ_6C1BXe0tHmp50Q-AjbgR4qiI4Ziipl_VPxDQ/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/Y2xhc3NpY2Zvb3Ri/YWxsc2hpcnRzLmNv/LnVrL2Nkbi1jZ2kv/aW1hZ2Uvdz0zNjAs/aD0zNjAscT0xMDAs/Zml0PXBhZCxmPXdl/YnAvcHViL21lZGlh/L2NhdGFsb2cvcHJv/ZHVjdC8vNC8wLzQw/NzAwMzMyMjE3MTYt/MV9kcHF4ZXFrbHRo/M2ZtaHRhLmpwZw",
-    kitsName: "AC Milan",
-    arrivalDate: "2026/27",
-    type:"Home Jersey",
-    price: "116.0",
-  },
-];

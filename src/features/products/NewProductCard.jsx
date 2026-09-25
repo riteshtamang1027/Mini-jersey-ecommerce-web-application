@@ -1,4 +1,39 @@
-import { ArrowLeft, ArrowRight, Plus } from "lucide-react";
+import { ArrowRight, Plus } from "lucide-react";
+const product = [
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT62ywxTlwqmWNEGrQGcm8LBK5HP2jJ4Vo1ckBDq4_m7Q&s=10",
+    kitsName: "Portugal National Team",
+    arrivalDate: "2026/27",
+    type: "CR7 N0.7",
+    price: "150.0",
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4qEMFKaB8A5c_xzihGKLMMzIhDPvPIeh3Mko5Sj3ksQ&s=10",
+    kitsName: "Spain National Team",
+    arrivalDate: "2026/27",
+    type: "Home Jersey",
+    price: "120.0",
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHYwhuYByomBErPnqrHp6n7lspi96EJ3dbzFwsCzFYcw&s=10",
+    kitsName: "USA",
+    arrivalDate: "2026/27",
+    type: "Home Jersey",
+    price: "126.0",
+  },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwW-Sx3N6Q-x85NvG3w9XyncjGy69HPGvfMSQFBqO82Q&s=10",
+    kitsName: "Lamine Yamal",
+    arrivalDate: "2026/27",
+    type: "Barca L19",
+    price: "130.0",
+  },
+];
+
 
 export default function NewProductCard() {
   return (
@@ -69,37 +104,3 @@ export default function NewProductCard() {
   );
 }
 
-const product = [
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT62ywxTlwqmWNEGrQGcm8LBK5HP2jJ4Vo1ckBDq4_m7Q&s=10",
-    kitsName: "Portugal National Team",
-    arrivalDate: "2026/27",
-    type: "CR7 N0.7",
-    price: "150.0",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4qEMFKaB8A5c_xzihGKLMMzIhDPvPIeh3Mko5Sj3ksQ&s=10",
-    kitsName: "Spain National Team",
-    arrivalDate: "2026/27",
-    type: "Home Jersey",
-    price: "120.0",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHYwhuYByomBErPnqrHp6n7lspi96EJ3dbzFwsCzFYcw&s=10",
-    kitsName: "USA",
-    arrivalDate: "2026/27",
-    type: "Home Jersey",
-    price: "126.0",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwW-Sx3N6Q-x85NvG3w9XyncjGy69HPGvfMSQFBqO82Q&s=10",
-    kitsName: "Lamine Yamal",
-    arrivalDate: "2026/27",
-    type: "Barca L19",
-    price: "130.0",
-  },
-];
