@@ -12,7 +12,7 @@ const navLink = [
     label: "Club Kits",
   },
   {
-    link: "nationalTeam",
+    link: "/nationalTeam",
     label: "National Teams",
   },
   {

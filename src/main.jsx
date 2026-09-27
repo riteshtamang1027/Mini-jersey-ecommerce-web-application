@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import Header from "./layouts/header.jsx";
 import Footer from "./layouts/footer.jsx";
 import ClubKits from "./pages/categoryBrowse/ClubKits.jsx";
+import JerseyProduct from "./pages/products/JerseyProduct.jsx";
 
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
@@ -19,6 +20,8 @@ createRoot(document.getElementById("root")).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/clubKits" element={<ClubKits />} />
+          <Route path="/nationalTeam" element={<JerseyProduct />} />
+
         </Routes>
       </main>
 
