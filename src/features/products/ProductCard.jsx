@@ -7,11 +7,18 @@ function ProductCard({ product }) {
   return (
     <article className="flex min-w-0 flex-col gap-3 rounded-xl border border-gray-200 bg-white p-2 transition-shadow hover:shadow-lg sm:gap-4">
       <Link to={productUrl} className="block overflow-hidden rounded-xl">
-        <img
-          className="aspect-[4/3] w-full object-cover transition-transform duration-300 hover:scale-105"
-          src={product.image}
-          alt={`${product.name} ${product.season}`}
-        />
+        <div className="relative">
+          {(product.isNewDrop || product.popularity >= 95) && (
+            <span className="absolute left-2 top-2 z-10 rounded-sm bg-secondary px-2 py-1 text-[9px] font-bold uppercase text-white">
+              {product.popularity >= 95 ? "Trending" : "New drop"}
+            </span>
+          )}
+          <img
+            className="aspect-[4/3] w-full object-cover transition-transform duration-300 hover:scale-105"
+            src={product.image}
+            alt={`${product.name} ${product.season}`}
+          />
+        </div>
       </Link>
 
       <div className="flex min-w-0 flex-1 flex-col gap-4">
