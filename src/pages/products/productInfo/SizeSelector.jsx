@@ -10,7 +10,11 @@ function SizeSelector({
           Select Size
         </span>
 
-        <button className="text-[9px] font-black uppercase text-secondary">
+        <button
+          type="button"
+          onClick={() => window.dispatchEvent(new Event("kithaus:open-size-guide"))}
+          className="text-[9px] font-black uppercase text-secondary"
+        >
           Size Guide
         </button>
       </div>

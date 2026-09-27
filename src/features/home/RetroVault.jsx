@@ -15,19 +15,21 @@ export default function RetroVault() {
             THE RETRO <span className="text-secondary">VAULT</span>
           </h3>
           <p className="max-w-xl text-sm leading-6 text-muted-text">
-            Own verified originals and legendary club re-issues. From iconic
-            sponsor block lettering to vintage satin embroidery, explore the
-            grails of international terrace wear.
+            Explore retro-inspired shirts and vintage-style club jerseys.
+            Browse classic eras, archive favorites, and supporter staples in
+            the curated catalog.
           </p>
-          <button type="button" className="rounded-lg border border-gray-200 px-4 py-3 text-left text-xs font-semibold">
+          <Link to="/clubKits?jerseyType=Retro%20Jersey" className="rounded-lg border border-gray-200 px-4 py-3 text-left text-xs font-semibold transition-colors hover:border-secondary hover:text-secondary">
             BROWSE VAULT DIRECTORY
-          </button>
+          </Link>
         </div>
         <div className="grid min-w-0 grid-cols-3 gap-2 sm:gap-3">
           {vintageImg.map((img, index) => (
-            <img key={img} className="aspect-[3/4] w-full rounded-lg object-cover" src={img} alt={`Retro football archive ${index + 1}`} />
+            <StoreImage key={img} className="aspect-[3/4] w-full rounded-lg object-cover" src={img} alt={`Retro football archive ${index + 1}`} />
           ))}
         </div>
     </section>
   );
 }
+import { Link } from "react-router";
+import StoreImage from "../../components/StoreImage";

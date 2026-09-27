@@ -1,8 +1,9 @@
 import { Link } from "react-router";
+import StoreImage from "../../components/StoreImage";
 
 export default function Category() {
   return (
-    <section className="mx-auto w-full max-w-[1440px] px-4 py-4 sm:px-8 lg:px-16">
+    <section id="featured-collections" className="mx-auto w-full max-w-[1440px] px-4 py-4 sm:px-8 lg:px-16">
       <div className="flex flex-col gap-6 sm:gap-8">
         {/* Title */}
         <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -29,7 +30,7 @@ export default function Category() {
               to={item.href}
               className="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
             >
-              <img
+              <StoreImage
                 className="aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
                 src={item.image}
                 alt={`${item.title} football collection`}
@@ -68,14 +69,14 @@ const category = [
     image:
       "https://images.unsplash.com/photo-1578434479660-7dbfe9b50f09?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fFZpbnRhZ2UlMjBBcmNoaXZlcyUyMGplcnNleXxlbnwwfHwwfHx8MA%3D%3D",
     title: "RETRO / VINTAGE",
-    href: "/clubKits",
+    href: "/clubKits?jerseyType=Retro%20Jersey",
     type: "Vintage Archives",
   },
   {
     image:
       "https://media.istockphoto.com/id/2272141140/photo/creative-fashion-designers-collaborating-with-fabric-and-color-palette-using-digital-tablet.webp?a=1&b=1&s=612x612&w=0&k=20&c=Y0wvYX_UYpN7614U3W8Q94BeBD4g9ngKJvl1yPeYlqQ=",
-    title: "CUSTOM LAB",
+    title: "KIT PERSONALIZER",
     href: "/clubKits",
-    type: "One-of-One Creation",
+    type: "Add a name or number",
   },
 ];

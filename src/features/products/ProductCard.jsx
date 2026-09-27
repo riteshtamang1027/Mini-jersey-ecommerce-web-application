@@ -1,11 +1,20 @@
 import { ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
 import { Link } from "react-router";
+import StoreImage from "../../components/StoreImage";
 
 function ProductCard({ product }) {
   const productUrl = `/products/${product.id}`;
 
   return (
-    <article className="flex min-w-0 flex-col gap-3 rounded-xl border border-gray-200 bg-white p-2 transition-shadow hover:shadow-lg sm:gap-4">
+    <motion.article
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      whileHover={{ y: -4 }}
+      transition={{ duration: 0.24, ease: "easeOut" }}
+      className="flex min-w-0 flex-col gap-3 rounded-xl border border-gray-200 bg-white p-2 transition-shadow hover:shadow-lg sm:gap-4"
+    >
       <Link to={productUrl} className="block overflow-hidden rounded-xl">
         <div className="relative">
           {(product.isNewDrop || product.popularity >= 95) && (
@@ -13,7 +22,7 @@ function ProductCard({ product }) {
               {product.popularity >= 95 ? "Trending" : "New drop"}
             </span>
           )}
-          <img
+          <StoreImage
             className="aspect-[4/3] w-full object-cover transition-transform duration-300 hover:scale-105"
             src={product.image}
             alt={`${product.name} ${product.season}`}
@@ -47,7 +56,7 @@ function ProductCard({ product }) {
           </Link>
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 }
 

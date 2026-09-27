@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import StoreImage from "../../../components/StoreImage";
 
 function ProductGallery({ images, tag }) {
   const [activeImage, setActiveImage] = useState(0);
@@ -35,7 +36,7 @@ function ProductGallery({ images, tag }) {
               }
             `}
           >
-            <img
+            <StoreImage
               src={image.src}
               alt={image.alt}
               className="h-full w-full object-cover"
@@ -49,7 +50,7 @@ function ProductGallery({ images, tag }) {
           {tag}
         </span>
 
-        <img
+        <StoreImage
           src={images[activeImage].src}
           alt={images[activeImage].alt}
           className="h-full w-full object-cover"

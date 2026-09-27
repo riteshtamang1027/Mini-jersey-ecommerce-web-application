@@ -4,18 +4,22 @@ const media = [
   {
     icon: FaInstagram,
     name: "Instagram",
+    href: "https://www.instagram.com/",
   },
   {
     icon: FaXTwitter,
     name: "Twitter",
+    href: "https://x.com/",
   },
   {
     icon: FaFacebookF,
     name: "Facebook",
+    href: "https://www.facebook.com/",
   },
   {
     icon: FaYoutube,
     name: "Youtube",
+    href: "https://www.youtube.com/",
   },
 ];
 
@@ -24,16 +28,14 @@ export default function SocialMedia() {
     <div className="flex w-max flex-col items-center gap-1 text-muted-text">
       <section className="flex items-center gap-2 ">
         {media.map((item) => (
-          <div key={item.name} className="group flex w-max flex-col items-center gap-1">
-            <div
-              className="w-max cursor-pointer rounded-full border border-gray-100 bg-gray-100 p-1.5"
-            >
+          <a key={item.name} href={item.href} target="_blank" rel="noreferrer" aria-label={`Visit ${item.name}`} className="group flex w-max flex-col items-center gap-1">
+            <span className="w-max rounded-full border border-gray-100 bg-gray-100 p-1.5 transition-colors group-hover:bg-secondary group-hover:text-white">
               <item.icon className="h-4 w-4" />
-            </div>
+            </span>
             <span className="text-xs font-semibold opacity-0 group-hover:opacity-100">
               {item.name}
             </span>
-          </div>
+          </a>
         ))}
       </section>
     </div>

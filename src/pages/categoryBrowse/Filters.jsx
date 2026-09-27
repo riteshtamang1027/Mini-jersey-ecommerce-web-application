@@ -1,87 +1,106 @@
-import { useState } from "react";
 import { ChevronUp } from "lucide-react";
+import { productFilterOptions } from "../../data/products.js";
 
-const filters = [
+const priceRanges = [
+  { label: "Under $75", value: "under-75" },
+  { label: "$75 - $110", value: "75-110" },
+  { label: "$110 - $150", value: "110-150" },
+  { label: "$150+", value: "150-plus" },
+];
+
+const filterGroups = [
   {
+    key: "league",
     title: "League",
-    options: [
-      "English Premier League",
-      "Italian Serie A",
-      "German Bundesliga",
-      "Spanish La Liga",
-      "MLS",
-      "International Teams",
-    ],
+    options: productFilterOptions.leagues.map((league) => ({
+      label: league,
+      value: league,
+    })),
   },
   {
+    key: "jerseyType",
     title: "Jersey Type",
-    options: [
-      "Vapor Elite Match Jersey",
-      "Stadium Home Kit",
-      "Away Kit",
-      "Vapor Retro Collared",
-      "Custom Creator Base",
-    ],
+    options: productFilterOptions.jerseyTypes.map((type) => ({
+      label: type,
+      value: type,
+    })),
   },
   {
+    key: "sizes",
     title: "Size Advisor",
-    options: ["XS", "S", "M", "L", "XL", "XXL"],
+    options: productFilterOptions.sizes.map((size) => ({
+      label: size,
+      value: size,
+    })),
   },
   {
+    key: "price",
     title: "Price Point",
-    options: ["Under $75", "$75 - $110", "$110 - $150", "$150+"],
+    options: priceRanges,
   },
 ];
 
-export default function Filters() {
-  const [selectedOptions, setSelectedOptions] = useState({});
-
-  const handleChange = (filterTitle, option) => {
-    setSelectedOptions((prev) => ({
-      ...prev,
-      [filterTitle]: option,
-    }));
+function Filters({ products, selectedFilters, onFilterChange }) {
+  const availableOptions = {
+    league: new Set(products.map((product) => product.league)),
+    jerseyType: new Set(products.map((product) => product.jerseyType)),
+    sizes: new Set(products.flatMap((product) => product.sizes)),
+    price: new Set(priceRanges.map((range) => range.value)),
   };
 
   return (
     <div className="flex w-full flex-col gap-6 font-archivo lg:gap-8">
-      {filters.map((filter) => (
-        <div key={filter.title} className="border-b border-gray-200">
-          {/* Header */}
-          <div className="flex items-center justify-between">
-            <h2 className="font-bold uppercase tracking-tight">
+      {filterGroups.map((filter) => {
+        const options = filter.options.filter((option) =>
+          availableOptions[filter.key].has(option.value)
+        );
+
+        if (options.length === 0) return null;
+
+        return (
+          <fieldset key={filter.key} className="border-b border-gray-200">
+            <legend className="flex w-full items-center justify-between font-bold uppercase tracking-tight">
               {filter.title}
-            </h2>
+              <ChevronUp
+                aria-hidden="true"
+                size={14}
+                strokeWidth={3}
+                className="text-muted-text"
+              />
+            </legend>
 
-            <ChevronUp size={14} strokeWidth={3} className="text-muted-text" />
-          </div>
+            <div className="flex flex-col gap-2 py-4">
+              {options.map((option) => {
+                const isSelected =
+                  selectedFilters[filter.key]?.includes(option.value) ?? false;
 
-          {/* Options */}
-          <div className="flex flex-col gap-2 py-4">
-            {filter.options.map((option) => {
-              const isSelected = selectedOptions[filter.title] === option;
-
-              return (
-                <label
-                  key={option}
-                  className="flex cursor-pointer items-center gap-2"
-                >
-                  <input
-                    type="checkbox"
-                    name={filter.title}
-                    value={option}
-                    checked={isSelected}
-                    onChange={() => handleChange(filter.title, option)}
-                    className="h-3 w-3"
-                  />
-
-                  <span className="text-sm leading-5 text-muted-text">{option}</span>
-                </label>
-              );
-            })}
-          </div>
-        </div>
-      ))}
+                return (
+                  <label
+                    key={option.value}
+                    className="flex cursor-pointer items-center gap-2"
+                  >
+                    <input
+                      type="checkbox"
+                      name={filter.key}
+                      value={option.value}
+                      checked={isSelected}
+                      onChange={() =>
+                        onFilterChange(filter.key, option.value)
+                      }
+                      className="h-4 w-4 accent-secondary"
+                    />
+                    <span className="text-sm leading-5 text-muted-text">
+                      {option.label}
+                    </span>
+                  </label>
+                );
+              })}
+            </div>
+          </fieldset>
+        );
+      })}
     </div>
   );
 }
+
+export default Filters;

@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import ProductCard from "./ProductCard";
 import { newDropProducts } from "../../data/products.js";
+import { Link } from "react-router";
 
 export default function NewProductCard() {
   return (
@@ -14,14 +15,14 @@ export default function NewProductCard() {
             NEW DROPS // SPRING &apos;26
           </h2>
         </div>
-        <div className="hidden shrink-0 items-center gap-4 sm:flex">
+        <Link to="/clubKits?sort=newest" className="hidden shrink-0 items-center gap-4 sm:flex">
           <p className="text-sm font-semibold text-muted-text">
             VIEW ALL RELEASES
           </p>
           <span className="rounded-full bg-secondary/60 p-2 text-white">
             <ArrowRight size={12} />
           </span>
-        </div>
+        </Link>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">

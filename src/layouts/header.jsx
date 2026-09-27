@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { CircleUser, Menu, ShoppingCart, Truck, X } from "lucide-react";
+import { CircleUser, Menu, Search, ShoppingCart, Truck, X } from "lucide-react";
 import BrandMark from "../components/BrandMark";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import { useCart } from "../features/cart/useCart.js";
+import { products } from "../data/products.js";
 
 const navLink = [
   {
@@ -21,8 +22,27 @@ const navLink = [
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
   const menuButtonRef = useRef(null);
   const { itemCount } = useCart();
+  const navigate = useNavigate();
+
+  const submitSearch = (event) => {
+    event.preventDefault();
+    const query = searchTerm.trim();
+    if (!query) return;
+
+    const matches = products.filter((product) =>
+      `${product.name} ${product.category} ${product.season} ${product.league} ${product.jerseyType}`
+        .toLowerCase()
+        .includes(query.toLowerCase())
+    );
+    const nationalOnly = matches.length > 0 && matches.every((product) =>
+      product.category.toLowerCase().includes("national")
+    );
+    navigate(`${nationalOnly ? "/nationalTeam" : "/clubKits"}?search=${encodeURIComponent(query)}`);
+    setIsMenuOpen(false);
+  };
 
   const closeMenu = () => {
     menuButtonRef.current?.focus();
@@ -50,22 +70,20 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className=" bg-gray-100">
+    <header className="bg-white/95 shadow-sm backdrop-blur">
       {/* upper header section */}
-      <section className=" w-full bg-surface font-archivo">
+      <section className="w-full bg-surface font-archivo">
         <div className="flex items-center justify-between px-4 py-2 text-[10px] font-semibold text-gray-600 sm:px-8 sm:text-xs lg:px-16 lg:py-1">
           <div className="flex items-center gap-2">
             <Truck size={16} />{" "}
-            <span>FREE SHIPPING ON ALL ORDERS OVER $99</span>
+            <span>KITHAUS FOOTBALL CULTURE · 2026</span>
           </div>
-          <p className="hidden lg:block">
-            USE CODE: KITHAUS10 FOR 10% OFF YOUR FIRST ORDER
-          </p>
-          <p className="hidden lg:block">LIVE SUPPORT // 24/7</p>
+          <p className="hidden lg:block">NEW SEASON COLLECTION // 26–27</p>
+          <p className="hidden lg:block">FRONTEND STORE DEMO · NO PAYMENTS</p>
         </div>
       </section>
 
-      <nav className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-gray-300 px-4 py-3 sm:px-8 lg:flex-nowrap lg:gap-4 lg:px-16 lg:py-4">
+      <nav className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-gray-200 px-4 py-3 sm:px-8 lg:flex-nowrap lg:gap-4 lg:px-16 lg:py-4">
         {/* badge or logo */}
 
         <BrandMark />
@@ -82,13 +100,19 @@ export default function Header() {
         {/* alternative links */}
         <div className="order-2 ml-auto flex shrink-0 items-center gap-3 lg:order-3 lg:ml-0 lg:gap-4">
           {/* search section */}
-          <div className="relative hidden w-max sm:block">
+          <form onSubmit={submitSearch} className="relative hidden w-max sm:block">
             <input
-              className="border border-gray-400 rounded-full px-4 py-1 text-xs text-black/70 focus:outline-none cursor-pointer "
-              type="text"
+              className="h-9 w-36 rounded-full border border-gray-300 bg-gray-50 py-1 pl-3 pr-9 text-xs text-black/70 placeholder:text-gray-400 focus:border-secondary focus:outline-none md:w-44"
+              type="search"
+              value={searchTerm}
+              onChange={(event) => setSearchTerm(event.target.value)}
               placeholder="Search kits..."
+              aria-label="Search kits"
             />
-          </div>
+            <button type="submit" aria-label="Submit search" className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-secondary">
+              <Search size={15} />
+            </button>
+          </form>
 
           <Link
             to="/account"
@@ -164,6 +188,19 @@ export default function Header() {
                 <X size={22} />
               </button>
             </div>
+
+            <form onSubmit={submitSearch} className="mb-5 flex items-center gap-2 rounded-lg border border-gray-200 px-3">
+              <Search size={17} className="shrink-0 text-gray-400" />
+              <input
+                type="search"
+                value={searchTerm}
+                onChange={(event) => setSearchTerm(event.target.value)}
+                aria-label="Search kits"
+                placeholder="Search jerseys..."
+                className="h-11 min-w-0 flex-1 bg-transparent text-sm outline-none"
+              />
+              <button type="submit" className="text-xs font-bold text-secondary">SEARCH</button>
+            </form>
 
             <div className="flex flex-col">
               {navLink.map((item, index) => (

@@ -9,6 +9,9 @@ function ProductInfo({ product, image }) {
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState("XL");
   const [quantity, setQuantity] = useState(1);
+  const [customizationOpen, setCustomizationOpen] = useState(false);
+  const [printName, setPrintName] = useState("");
+  const [printNumber, setPrintNumber] = useState("");
 
   const increaseQuantity = () => {
     setQuantity((value) => value + 1);
@@ -19,9 +22,24 @@ function ProductInfo({ product, image }) {
   };
 
   const addSelectedItem = () => {
+    const personalization = {
+      name: printName.trim().toUpperCase(),
+      number: printNumber.trim(),
+    };
+    const hasPersonalization = Boolean(personalization.name || personalization.number);
+    const variantId = [
+      product.id,
+      product.colors[selectedColor].name,
+      selectedSize,
+      hasPersonalization ? personalization.name : "",
+      hasPersonalization ? personalization.number : "",
+    ]
+      .filter(Boolean)
+      .join("-");
+
     addItem(
       {
-        id: `${product.id}-${product.colors[selectedColor].name}-${selectedSize}`,
+        id: variantId,
         productId: product.id,
         name: product.name,
         season: product.season,
@@ -29,6 +47,7 @@ function ProductInfo({ product, image }) {
         image,
         color: product.colors[selectedColor].name,
         size: selectedSize,
+        ...(hasPersonalization && { personalization }),
       },
       quantity
     );
@@ -63,7 +82,7 @@ function ProductInfo({ product, image }) {
         </span>
 
         <span className="rounded bg-[#e7ebe5] px-2 py-1 text-[8px] font-bold uppercase">
-          In stock
+          Demo listing
         </span>
       </div>
 
@@ -97,6 +116,12 @@ function ProductInfo({ product, image }) {
           onIncrease={increaseQuantity}
           onDecrease={decreaseQuantity}
           onAddToBag={addSelectedItem}
+          customizationOpen={customizationOpen}
+          onToggleCustomization={() => setCustomizationOpen((open) => !open)}
+          printName={printName}
+          printNumber={printNumber}
+          onPrintNameChange={setPrintName}
+          onPrintNumberChange={setPrintNumber}
         />
       </div>
 
@@ -104,33 +129,18 @@ function ProductInfo({ product, image }) {
       <div className="mt-5 grid grid-cols-3 border-t border-[#dfe3df] pt-4">
 
         <div>
-          <p className="text-[8px] font-black uppercase">
-            Shipping
-          </p>
-
-          <p className="mt-1 text-[10px] text-gray-500">
-            1–3 days
-          </p>
+          <p className="text-[8px] font-black uppercase">Shipping</p>
+          <p className="mt-1 text-[10px] text-gray-500">Not connected</p>
         </div>
 
         <div className="border-x border-[#dfe3df] px-3">
-          <p className="text-[8px] font-black uppercase">
-            Returns
-          </p>
-
-          <p className="mt-1 text-[10px] text-gray-500">
-            30 days
-          </p>
+          <p className="text-[8px] font-black uppercase">Returns</p>
+          <p className="mt-1 text-[10px] text-gray-500">Demo only</p>
         </div>
 
         <div className="pl-3">
-          <p className="text-[8px] font-black uppercase">
-            Authentic
-          </p>
-
-          <p className="mt-1 text-[10px] text-gray-500">
-            Official
-          </p>
+          <p className="text-[8px] font-black uppercase">Product data</p>
+          <p className="mt-1 text-[10px] text-gray-500">Sample listing</p>
         </div>
 
       </div>

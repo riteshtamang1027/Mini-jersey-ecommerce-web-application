@@ -36,7 +36,7 @@ function JerseyProduct({ getProduct }) {
         </div>
       </section>
 
-      <ProductTabs />
+      <ProductTabs product={product} />
 
       <section className="mx-auto max-w-[1440px] px-4 py-10 sm:px-6 sm:py-12 lg:px-10 lg:py-16">
         <div className="mb-6 flex items-end justify-between gap-3 sm:mb-7">

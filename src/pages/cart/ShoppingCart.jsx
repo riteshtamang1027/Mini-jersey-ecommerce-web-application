@@ -1,6 +1,7 @@
 import { ArrowRight, Minus, Plus, ShoppingBag, Trash2 } from "lucide-react";
 import { Link } from "react-router";
 import { useCart } from "../../features/cart/useCart.js";
+import StoreImage from "../../components/StoreImage";
 
 const formatPrice = (price) => `$${price.toFixed(2)}`;
 
@@ -44,7 +45,7 @@ function ShoppingCart() {
                   key={item.id}
                   className="flex flex-col gap-4 py-5 sm:flex-row sm:items-center"
                 >
-                  <img
+                  <StoreImage
                     src={item.image}
                     alt={item.name}
                     className="h-28 w-full rounded-lg bg-gray-100 object-cover sm:w-28"
@@ -56,6 +57,13 @@ function ShoppingCart() {
                         .filter(Boolean)
                         .join(" · ")}
                     </p>
+                    {item.personalization && (
+                      <p className="mt-1 text-xs font-semibold text-gray-600">
+                        Print: {[item.personalization.name, item.personalization.number]
+                          .filter(Boolean)
+                          .join(" · ")}
+                      </p>
+                    )}
                     <p className="mt-3 font-bold text-secondary">
                       {formatPrice(item.price)}
                     </p>

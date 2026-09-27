@@ -204,6 +204,13 @@ function Checkout() {
                     <span className="text-xs text-muted-text">
                       Qty {item.quantity}
                     </span>
+                    {item.personalization && (
+                      <span className="block text-xs text-muted-text">
+                        Print: {[item.personalization.name, item.personalization.number]
+                          .filter(Boolean)
+                          .join(" · ")}
+                      </span>
+                    )}
                   </span>
                   <span className="shrink-0 font-semibold">
                     {formatPrice(item.price * item.quantity)}

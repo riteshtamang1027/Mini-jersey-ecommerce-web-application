@@ -8,7 +8,7 @@ import CustomLabBanner from "./features/home/CustomLabBanner";
 
 export default function App() {
   return (
-    <div className="flex flex-col gap-10 sm:gap-14 lg:gap-16">
+    <main className="flex flex-col gap-10 sm:gap-14 lg:gap-16">
       <Hero />
       <Category />
       <FeatureProduct />
@@ -16,6 +16,6 @@ export default function App() {
       <NewProductCard />
       <CustomLabBanner/>
       <NewsLetter />
-    </div>
+    </main>
   );
 }

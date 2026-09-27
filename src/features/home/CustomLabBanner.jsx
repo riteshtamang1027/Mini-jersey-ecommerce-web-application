@@ -1,4 +1,5 @@
 import { Zap } from "lucide-react";
+import { Link } from "react-router";
 import image from '../../assets/customLabImage/customLabImage.png';
 
 export default function CustomLabBanner() {
@@ -14,14 +15,13 @@ export default function CustomLabBanner() {
           <p className="text-sm text-secondary">KITHAUS CUSTOM LAB</p>
           <h3 className="text-3xl font-extrabold leading-tight sm:text-4xl">DESIGN YOUR OWN <span className="text-secondary">LEGACY</span></h3>
           <p className="text-sm leading-6 text-muted-text">
-            Add your name, select your favorite historical number font, choose
-            team crest placements, and pick from our elite material options.
-            Individually manufactured to tournament standards.
+            Make a shirt your own with an optional name and number. Open a jersey
+            product to add your print selection to the demo shopping bag.
           </p>
 
-          <button type="button" className="flex min-h-11 w-max items-center gap-2 rounded-lg border bg-secondary px-4 py-2 text-xs font-semibold text-white">
-            <span>ENTER CREATOR STUDIO</span> <Zap size={12} />
-          </button>
+          <Link to="/clubKits" className="flex min-h-11 w-max items-center gap-2 rounded-lg border bg-secondary px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-secondary/90">
+            <span>BROWSE JERSEYS</span> <Zap size={12} />
+          </Link>
         </div>
       </section>
   );
