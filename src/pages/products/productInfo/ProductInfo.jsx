@@ -2,8 +2,10 @@ import { useState } from "react";
 import ColorSelector from "./ColorSelector";
 import SizeSelector from "./SizeSelector";
 import ProductActions from "./ProductActions";
+import { useCart } from "../../../features/cart/useCart.js";
 
-function ProductInfo({ product }) {
+function ProductInfo({ product, image }) {
+  const { addItem } = useCart();
   const [selectedColor, setSelectedColor] = useState(0);
   const [selectedSize, setSelectedSize] = useState("XL");
   const [quantity, setQuantity] = useState(1);
@@ -16,12 +18,28 @@ function ProductInfo({ product }) {
     setQuantity((value) => Math.max(1, value - 1));
   };
 
+  const addSelectedItem = () => {
+    addItem(
+      {
+        id: `${product.id}-${product.colors[selectedColor].name}-${selectedSize}`,
+        productId: product.id,
+        name: product.name,
+        season: product.season,
+        price: product.price,
+        image,
+        color: product.colors[selectedColor].name,
+        size: selectedSize,
+      },
+      quantity
+    );
+  };
+
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex min-w-0 flex-col justify-center">
 
       {/* Category */}
       <div className="mb-3 flex items-center gap-2">
-        <span className="h-1.5 w-1.5 rotate-45 bg-[#b8ff00]" />
+        <span className="h-1.5 w-1.5 rotate-45 bg-secondary" />
 
         <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-500">
           {product.category}
@@ -29,7 +47,7 @@ function ProductInfo({ product }) {
       </div>
 
       {/* Title */}
-      <h1 className="text-4xl font-black uppercase leading-[0.9] tracking-tight sm:text-5xl">
+      <h1 className="text-3xl font-black uppercase leading-[0.9] tracking-tight min-[380px]:text-4xl sm:text-5xl">
         {product.name}
         <br />
 
@@ -40,7 +58,7 @@ function ProductInfo({ product }) {
 
       {/* Price */}
       <div className="mt-5 flex items-center gap-3">
-        <span className="text-2xl font-black text-[#78ad00]">
+        <span className="text-2xl font-black text-secondary">
           ${product.price}.00
         </span>
 
@@ -78,6 +96,7 @@ function ProductInfo({ product }) {
           quantity={quantity}
           onIncrease={increaseQuantity}
           onDecrease={decreaseQuantity}
+          onAddToBag={addSelectedItem}
         />
       </div>
 

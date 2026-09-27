@@ -26,7 +26,7 @@ function ProductTabs() {
                 relative whitespace-nowrap py-4 text-[9px] font-black uppercase
                 ${
                   activeTab === key
-                    ? "text-[#78ad00]"
+                    ? "text-secondary"
                     : "text-gray-500"
                 }
               `}
@@ -34,7 +34,7 @@ function ProductTabs() {
               {label}
 
               {activeTab === key && (
-                <span className="absolute bottom-0 left-0 h-[2px] w-full bg-[#b8ff00]" />
+                <span className="absolute bottom-0 left-0 h-[2px] w-full bg-secondary" />
               )}
             </button>
           ))}
@@ -107,7 +107,7 @@ function ProductTabs() {
               </span>
 
               <div>
-                <div className="text-[#b8ff00]">
+                <div className="text-secondary">
                   ★★★★★
                 </div>
 

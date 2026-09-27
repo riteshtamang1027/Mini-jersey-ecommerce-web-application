@@ -10,7 +10,7 @@ function SizeSelector({
           Select Size
         </span>
 
-        <button className="text-[9px] font-black uppercase text-[#78ad00]">
+        <button className="text-[9px] font-black uppercase text-secondary">
           Size Guide
         </button>
       </div>
@@ -24,7 +24,7 @@ function SizeSelector({
               h-9 rounded text-[10px] font-black
               ${
                 selectedSize === size
-                  ? "bg-[#b8ff00] text-black"
+                  ? "bg-secondary text-white"
                   : "bg-[#e9ece8] text-gray-700 hover:bg-[#dfe3df]"
               }
             `}

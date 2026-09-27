@@ -5,11 +5,12 @@ function ProductActions({
   quantity,
   onIncrease,
   onDecrease,
+  onAddToBag,
 }) {
   return (
     <div className="space-y-2">
 
-      <div className="grid grid-cols-[90px_1fr] gap-2">
+      <div className="grid grid-cols-[minmax(72px,90px)_minmax(0,1fr)] gap-2">
 
         <QuantitySelector
           quantity={quantity}
@@ -17,7 +18,11 @@ function ProductActions({
           onDecrease={onDecrease}
         />
 
-        <button className="flex items-center justify-center gap-2 rounded bg-[#b8ff00] text-[10px] font-black uppercase hover:bg-[#a9eb00]">
+        <button
+          type="button"
+          onClick={onAddToBag}
+          className="flex min-w-0 items-center justify-center gap-2 rounded bg-secondary px-2 text-[9px] font-black uppercase text-white hover:bg-secondary/90 sm:text-[10px]"
+        >
           <ShoppingBag size={14} />
           Add to Bag
         </button>

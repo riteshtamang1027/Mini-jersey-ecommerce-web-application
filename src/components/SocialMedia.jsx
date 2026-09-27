@@ -21,22 +21,21 @@ const media = [
 
 export default function SocialMedia() {
   return (
-    <main className=" text-muted-text w-max  flex flex-col items-center gap-1">
+    <div className="flex w-max flex-col items-center gap-1 text-muted-text">
       <section className="flex items-center gap-2 ">
-        {media.map((item, i) => (
-          <div className="flex flex-col items-center gap-1 w-max group">
+        {media.map((item) => (
+          <div key={item.name} className="group flex w-max flex-col items-center gap-1">
             <div
-              key={i}
-              className="p-1.5 border border-gray-100 rounded-full w-max bg-gray-100 cursor-pointer"
+              className="w-max cursor-pointer rounded-full border border-gray-100 bg-gray-100 p-1.5"
             >
-              <item.icon className="w-4 h-4 " />
+              <item.icon className="h-4 w-4" />
             </div>
-            <span className="opacity-0 group-hover:opacity-100 text-xs font-semibold">
+            <span className="text-xs font-semibold opacity-0 group-hover:opacity-100">
               {item.name}
             </span>
           </div>
         ))}
       </section>
-    </main>
+    </div>
   );
 }

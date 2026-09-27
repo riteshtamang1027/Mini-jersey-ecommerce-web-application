@@ -44,7 +44,7 @@ export default function Filters() {
   };
 
   return (
-    <div className="w-max font-archivo flex  flex-col gap-8">
+    <div className="flex w-full flex-col gap-6 font-archivo lg:gap-8">
       {filters.map((filter) => (
         <div key={filter.title} className="border-b border-gray-200">
           {/* Header */}
@@ -75,7 +75,7 @@ export default function Filters() {
                     className="h-3 w-3"
                   />
 
-                  <span className="text-base text-muted-text">{option}</span>
+                  <span className="text-sm leading-5 text-muted-text">{option}</span>
                 </label>
               );
             })}

@@ -24,7 +24,7 @@ function ColorSelector({
               flex h-7 w-7 items-center justify-center rounded-full border
               ${
                 selectedColor === index
-                  ? "border-[#b8ff00]"
+                  ? "border-secondary"
                   : "border-transparent"
               }
             `}

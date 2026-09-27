@@ -4,11 +4,11 @@ const pages = [1, 2, 3, "...", 8];
 
 export default function Pagination() {
   return (
-    <nav className="flex items-center justify-center gap-4 ">
+    <nav aria-label="Pagination" className="flex w-full flex-wrap items-center justify-center gap-1.5 sm:gap-4">
       <button
+        type="button"
         aria-label="Previous page"
-        className="grid  place-items-center rounded-md
-          border border-gray-300 p-2 cursor-pointer"
+        className="grid place-items-center rounded-md border border-gray-300 p-1.5 sm:p-2"
       >
         <ChevronLeft size={22} />
       </button>
@@ -19,11 +19,12 @@ export default function Pagination() {
         return (
           <button
             key={index}
+            type="button"
             disabled={page === "..."}
             className={[
               "flex items-center justify-center rounded-md",
-              "border border-gray-200 w-10 h-10",
-              "text-lg font-semibold place-items-center cursor-pointer ",
+              "h-8 w-8 border border-gray-200 sm:h-10 sm:w-10",
+              "place-items-center text-sm font-semibold sm:text-lg",
               active
                 ? "border-secondary bg-secondary text-white"
                 : "  bg-gray-100",
@@ -36,9 +37,9 @@ export default function Pagination() {
       })}
 
       <button
+        type="button"
         aria-label="Next page"
-        className="grid  place-items-center rounded-md
-          border  text-secondary p-2 cursor-pointer"
+        className="grid place-items-center rounded-md border p-1.5 text-secondary sm:p-2"
       >
         <ChevronRight size={22} />
       </button>

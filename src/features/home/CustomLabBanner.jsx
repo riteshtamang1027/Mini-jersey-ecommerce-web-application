@@ -3,28 +3,26 @@ import image from '../../assets/customLabImage/customLabImage.png';
 
 export default function CustomLabBanner() {
   return (
-    <main className="px-16">
-      <section className="flex items-center justify-between gap-12 w-full overflow-hidden h-92 font-archivo">
+      <section className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-6 px-4 font-archivo sm:gap-8 sm:px-8 md:grid-cols-2 lg:gap-12 lg:px-16">
         {/* image */}
-        <div className="w-1/2 ">
-          <img src={image} alt="" />
+        <div className="aspect-[4/3] min-w-0 overflow-hidden rounded-xl bg-gray-100">
+          <img className="h-full w-full object-cover" src={image} alt="Custom football jersey design workspace" />
         </div>
 
         {/* text or description */}
-        <div className="flex flex-col  gap-6 w-1/2">
+        <div className="flex min-w-0 flex-col gap-4 sm:gap-6">
           <p className="text-sm text-secondary">KITHAUS CUSTOM LAB</p>
-          <h3 className="text-4xl font-extrabold scale-y-120">DESIGN YOUR OWN <span className="text-secondary">LEGACY</span></h3>
-          <p className="text-sm text-muted-text">
+          <h3 className="text-3xl font-extrabold leading-tight sm:text-4xl">DESIGN YOUR OWN <span className="text-secondary">LEGACY</span></h3>
+          <p className="text-sm leading-6 text-muted-text">
             Add your name, select your favorite historical number font, choose
             team crest placements, and pick from our elite material options.
             Individually manufactured to tournament standards.
           </p>
 
-          <button className="text-xs font-semibold border bg-secondary rounded-lg px-4 py-2 text-white flex items-center gap-2 w-max cursor-pointer">
+          <button type="button" className="flex min-h-11 w-max items-center gap-2 rounded-lg border bg-secondary px-4 py-2 text-xs font-semibold text-white">
             <span>ENTER CREATOR STUDIO</span> <Zap size={12} />
           </button>
         </div>
       </section>
-    </main>
   );
 }

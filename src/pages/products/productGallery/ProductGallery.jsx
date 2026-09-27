@@ -17,21 +17,21 @@ function ProductGallery({ images, tag }) {
   };
 
   return (
-    <div className="flex flex-col gap-3 sm:flex-row">
-
-      {/* Thumbnails */}
-      <div className="flex gap-2 sm:w-[64px] sm:flex-col">
+    <div className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-[64px_minmax(0,1fr)] sm:gap-4">
+      <div className="order-2 grid grid-cols-4 gap-2 sm:order-1 sm:grid-cols-1 sm:content-start">
         {images.map((image, index) => (
           <button
             key={image.src}
+            type="button"
+            aria-label={`Show ${image.alt}`}
+            aria-pressed={activeImage === index}
             onClick={() => setActiveImage(index)}
             className={`
-              h-14 w-14 overflow-hidden rounded-md border
-              bg-white sm:h-16 sm:w-16
+              aspect-square w-full overflow-hidden rounded-md border bg-white
               ${
                 activeImage === index
-                  ? "border-[#b8ff00]"
-                  : "border-[#dfe3df]"
+                  ? "border-secondary"
+                  : "border-gray-300"
               }
             `}
           >
@@ -44,10 +44,8 @@ function ProductGallery({ images, tag }) {
         ))}
       </div>
 
-      {/* Main image */}
-      <div className="relative aspect-square flex-1 overflow-hidden rounded-lg border border-[#dfe3df] bg-white">
-
-        <span className="absolute left-4 top-4 z-10 bg-[#b8ff00] px-2 py-1 text-[9px] font-black uppercase">
+      <div className="relative order-1 aspect-square min-w-0 overflow-hidden rounded-lg border border-[#dfe3df] bg-white sm:order-2">
+        <span className="absolute left-4 top-4 z-10 bg-secondary px-2 py-1 text-[9px] font-black uppercase text-white">
           {tag}
         </span>
 
@@ -57,18 +55,20 @@ function ProductGallery({ images, tag }) {
           className="h-full w-full object-cover"
         />
 
-        {/* Previous */}
         <button
+          type="button"
+          aria-label="Show previous product image"
           onClick={previousImage}
-          className="absolute left-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow"
+          className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow"
         >
           <ChevronLeft size={15} />
         </button>
 
-        {/* Next */}
         <button
+          type="button"
+          aria-label="Show next product image"
           onClick={nextImage}
-          className="absolute right-3 top-1/2 flex h-8 w-8 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow"
+          className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow"
         >
           <ChevronRight size={15} />
         </button>
