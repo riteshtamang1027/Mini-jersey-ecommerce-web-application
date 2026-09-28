@@ -60,7 +60,7 @@ function ProductInfo({ product, image }) {
       <div className="mb-3 flex items-center gap-2">
         <span className="h-1.5 w-1.5 rotate-45 bg-secondary" />
 
-        <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-gray-500">
+        <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-muted-text">
           {product.category}
         </span>
       </div>
@@ -70,7 +70,7 @@ function ProductInfo({ product, image }) {
         {product.name}
         <br />
 
-        <span className="text-gray-400">
+        <span className="text-muted-text">
           {product.season}
         </span>
       </h1>
@@ -81,17 +81,17 @@ function ProductInfo({ product, image }) {
           ${product.price}.00
         </span>
 
-        <span className="rounded bg-[#e7ebe5] px-2 py-1 text-[8px] font-bold uppercase">
+        <span className="rounded bg-surface-raised px-2 py-1 text-[8px] font-bold uppercase">
           Demo listing
         </span>
       </div>
 
       {/* Description */}
-      <p className="mt-3 max-w-md text-xs leading-5 text-gray-500">
+      <p className="mt-3 max-w-md text-xs leading-5 text-muted-text">
         {product.description}
       </p>
 
-      <div className="my-5 h-px bg-[#dfe3df]" />
+      <div className="my-5 h-px bg-border" />
 
       {/* Color */}
       <ColorSelector
@@ -126,21 +126,21 @@ function ProductInfo({ product, image }) {
       </div>
 
       {/* Small information */}
-      <div className="mt-5 grid grid-cols-3 border-t border-[#dfe3df] pt-4">
+      <div className="mt-5 grid grid-cols-3 border-t border-border pt-4">
 
         <div>
           <p className="text-[8px] font-black uppercase">Shipping</p>
-          <p className="mt-1 text-[10px] text-gray-500">Not connected</p>
+          <p className="mt-1 text-[10px] text-muted-text">Not connected</p>
         </div>
 
-        <div className="border-x border-[#dfe3df] px-3">
+        <div className="border-x border-border px-3">
           <p className="text-[8px] font-black uppercase">Returns</p>
-          <p className="mt-1 text-[10px] text-gray-500">Demo only</p>
+          <p className="mt-1 text-[10px] text-muted-text">Demo only</p>
         </div>
 
         <div className="pl-3">
           <p className="text-[8px] font-black uppercase">Product data</p>
-          <p className="mt-1 text-[10px] text-gray-500">Sample listing</p>
+          <p className="mt-1 text-[10px] text-muted-text">Sample listing</p>
         </div>
 
       </div>

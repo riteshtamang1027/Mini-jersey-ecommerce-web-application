@@ -29,7 +29,7 @@ function SizeSelector({
               ${
                 selectedSize === size
                   ? "bg-secondary text-white"
-                  : "bg-[#e9ece8] text-gray-700 hover:bg-[#dfe3df]"
+                  : "bg-surface-raised text-foreground hover:bg-secondary/25"
               }
             `}
           >

@@ -6,7 +6,7 @@ function QuantitySelector({
   onDecrease,
 }) {
   return (
-    <div className="flex h-10 items-center justify-between rounded border border-[#d7dcd7] bg-white px-2.5">
+    <div className="flex h-10 items-center justify-between rounded border border-border bg-surface px-2.5">
       <button onClick={onDecrease}>
         <Minus size={13} />
       </button>

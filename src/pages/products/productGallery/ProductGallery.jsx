@@ -28,11 +28,11 @@ function ProductGallery({ images, tag }) {
             aria-pressed={activeImage === index}
             onClick={() => setActiveImage(index)}
             className={`
-              aspect-square w-full overflow-hidden rounded-md border bg-white
+              aspect-square w-full overflow-hidden rounded-md border bg-surface-raised
               ${
                 activeImage === index
                   ? "border-secondary"
-                  : "border-gray-300"
+                  : "border-border"
               }
             `}
           >
@@ -45,7 +45,7 @@ function ProductGallery({ images, tag }) {
         ))}
       </div>
 
-      <div className="relative order-1 aspect-square min-w-0 overflow-hidden rounded-lg border border-[#dfe3df] bg-white sm:order-2">
+      <div className="relative order-1 aspect-square min-w-0 overflow-hidden rounded-lg border border-border bg-surface sm:order-2">
         <span className="absolute left-4 top-4 z-10 bg-secondary px-2 py-1 text-[9px] font-black uppercase text-white">
           {tag}
         </span>
@@ -60,7 +60,7 @@ function ProductGallery({ images, tag }) {
           type="button"
           aria-label="Show previous product image"
           onClick={previousImage}
-          className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow"
+          className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface/90 text-foreground shadow-lg shadow-black/20 hover:bg-secondary hover:text-white"
         >
           <ChevronLeft size={15} />
         </button>
@@ -69,7 +69,7 @@ function ProductGallery({ images, tag }) {
           type="button"
           aria-label="Show next product image"
           onClick={nextImage}
-          className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 shadow"
+          className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface/90 text-foreground shadow-lg shadow-black/20 hover:bg-secondary hover:text-white"
         >
           <ChevronRight size={15} />
         </button>

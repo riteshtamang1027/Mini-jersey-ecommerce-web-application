@@ -8,7 +8,7 @@ export default function Pagination({ currentPage, pageCount, onPageChange }) {
         aria-label="Previous page"
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="grid place-items-center rounded-md border border-gray-300 p-1.5 sm:p-2"
+        className="grid place-items-center rounded-md border border-border p-1.5 transition-colors hover:border-secondary hover:text-secondary disabled:opacity-40 sm:p-2"
       >
         <ChevronLeft size={22} />
       </button>
@@ -23,11 +23,11 @@ export default function Pagination({ currentPage, pageCount, onPageChange }) {
             onClick={() => onPageChange(page)}
             className={[
               "flex items-center justify-center rounded-md",
-              "h-8 w-8 border border-gray-200 sm:h-10 sm:w-10",
+              "h-8 w-8 border border-border sm:h-10 sm:w-10",
               "place-items-center text-sm font-semibold sm:text-lg",
               currentPage === page
                 ? "border-secondary bg-secondary text-white"
-                : "  bg-gray-100",
+                : "bg-surface hover:border-secondary hover:text-secondary",
             ].join(" ")}
           >
             {page}
@@ -40,7 +40,7 @@ export default function Pagination({ currentPage, pageCount, onPageChange }) {
         aria-label="Next page"
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === pageCount}
-        className="grid place-items-center rounded-md border p-1.5 text-secondary sm:p-2"
+        className="grid place-items-center rounded-md border border-border p-1.5 text-secondary transition-colors hover:border-secondary disabled:opacity-40 sm:p-2"
       >
         <ChevronRight size={22} />
       </button>

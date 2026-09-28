@@ -24,12 +24,12 @@ function ProductTabs({ product }) {
   }, []);
 
   return (
-    <section id="product-information" className="scroll-mt-28 border-y border-[#dfe3df] bg-white">
+    <section id="product-information" className="scroll-mt-28 border-y border-border bg-surface">
 
       <div className="mx-auto max-w-[1400px] px-4 sm:px-6 lg:px-10">
 
         {/* Navigation */}
-        <div className="flex gap-6 overflow-x-auto border-b border-[#e1e5e1]">
+        <div className="flex gap-6 overflow-x-auto border-b border-border">
 
           {tabs.map(([key, label]) => (
             <button
@@ -42,7 +42,7 @@ function ProductTabs({ product }) {
                 ${
                   activeTab === key
                     ? "text-secondary"
-                    : "text-gray-500"
+                    : "text-muted-text"
                 }
               `}
             >
@@ -60,19 +60,19 @@ function ProductTabs({ product }) {
         <div className="max-w-4xl py-6">
 
           {activeTab === "description" && (
-            <p className="text-xs leading-6 text-gray-500">
+            <p className="text-xs leading-6 text-muted-text">
               {product.description}
             </p>
           )}
 
           {activeTab === "size" && (
-            <div className="grid grid-cols-4 gap-px overflow-hidden rounded bg-gray-200 text-xs">
+            <div className="grid grid-cols-4 gap-px overflow-hidden rounded bg-border text-xs">
 
               {["Size", "Chest*", "Length*", "Shoulder*"].map(
                 (item) => (
                   <div
                     key={item}
-                    className="bg-gray-100 p-3 font-black"
+                    className="bg-surface-raised p-3 font-black"
                   >
                     {item}
                   </div>
@@ -81,13 +81,13 @@ function ProductTabs({ product }) {
 
               {product.sizes.map((size, index) => (
                 <div key={size} className="contents">
-                  <div className="bg-white p-3 font-bold">{size}</div>
-                  <div className="bg-white p-3">{38 + index * 2}&quot;</div>
-                  <div className="bg-white p-3">{27 + index}&quot;</div>
-                  <div className="bg-white p-3">{17 + index}&quot;</div>
+                  <div className="bg-surface p-3 font-bold">{size}</div>
+                  <div className="bg-surface p-3">{38 + index * 2}&quot;</div>
+                  <div className="bg-surface p-3">{27 + index}&quot;</div>
+                  <div className="bg-surface p-3">{17 + index}&quot;</div>
                 </div>
               ))}
-              <p className="col-span-4 bg-gray-100 p-3 text-[10px] text-gray-500">
+              <p className="col-span-4 bg-surface-raised p-3 text-[10px] text-muted-text">
                 *Illustrative fit measurements only; this demo is not connected
                 to a garment manufacturer.
               </p>
@@ -95,14 +95,14 @@ function ProductTabs({ product }) {
           )}
 
           {activeTab === "shipping" && (
-            <p className="text-xs leading-6 text-gray-500">
+            <p className="text-xs leading-6 text-muted-text">
               This storefront is a frontend demo. It does not process payments,
               fulfill shipments, or accept returns.
             </p>
           )}
 
           {activeTab === "reviews" && (
-            <p className="text-xs leading-6 text-gray-500">
+            <p className="text-xs leading-6 text-muted-text">
               Reviews are not available for this demo product yet.
             </p>
           )}

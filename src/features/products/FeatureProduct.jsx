@@ -33,7 +33,7 @@ export default function FeatureProduct() {
             type="button"
             aria-label="Previous trending products"
             onClick={() => shiftProducts(-1)}
-            className="rounded-full bg-gray-100 p-2 transition-colors hover:bg-gray-200"
+            className="rounded-full bg-surface-raised p-2 transition-colors hover:bg-secondary hover:text-white"
           >
             <ArrowLeft size={16} />
           </button>

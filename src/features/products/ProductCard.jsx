@@ -13,7 +13,7 @@ function ProductCard({ product }) {
       viewport={{ once: true, amount: 0.15 }}
       whileHover={{ y: -4 }}
       transition={{ duration: 0.24, ease: "easeOut" }}
-      className="flex min-w-0 flex-col gap-3 rounded-xl border border-gray-200 bg-white p-2 transition-shadow hover:shadow-lg sm:gap-4"
+      className="flex min-w-0 flex-col gap-3 rounded-xl border border-border bg-surface p-2 shadow-sm shadow-black/10 transition-shadow hover:border-secondary/50 hover:shadow-xl hover:shadow-black/20 sm:gap-4 sm:p-3"
     >
       <Link to={productUrl} className="block overflow-hidden rounded-xl">
         <div className="relative">
@@ -40,7 +40,7 @@ function ProductCard({ product }) {
           </p>
         </Link>
 
-        <div className="mt-auto flex items-center justify-between gap-2 border-t border-gray-200 pt-3">
+        <div className="mt-auto flex items-center justify-between gap-2 border-t border-border pt-3">
           <p className="shrink-0 font-archivo text-lg font-bold text-secondary sm:text-xl">
             ${product.price.toFixed(2)}
           </p>

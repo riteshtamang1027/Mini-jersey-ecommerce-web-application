@@ -147,9 +147,9 @@ function ProductCatalog({ title, description, products }) {
         onSortChange={changeSort}
       />
 
-      <div className="flex w-full flex-col gap-5 border-t border-gray-200 pt-5 lg:flex-row lg:gap-8 lg:pt-8">
+      <div className="flex w-full flex-col gap-5 border-t border-border pt-5 lg:flex-row lg:gap-8 lg:pt-8">
         <aside className="w-full shrink-0 lg:w-64">
-          <details className="rounded-lg border border-gray-200 bg-white p-4 lg:hidden">
+          <details className="rounded-lg border border-border bg-surface p-4 lg:hidden">
             <summary className="cursor-pointer text-sm font-bold uppercase">
               Filters
               {hasActiveFilters && (
@@ -180,7 +180,7 @@ function ProductCatalog({ title, description, products }) {
             {hasActiveFilters && (
               <section
                 aria-label="Active filters"
-                className="w-full rounded-lg border border-gray-200 bg-white p-4"
+                className="w-full rounded-lg border border-border bg-surface p-4"
               >
                 <div className="flex flex-wrap items-center justify-between gap-3">
                   <div className="flex flex-wrap items-center gap-2">
@@ -254,7 +254,7 @@ function ProductCatalog({ title, description, products }) {
             {pageProducts.length > 0 ? (
               <ClubKitsProduct products={pageProducts} />
             ) : (
-              <section className="w-full rounded-xl border border-dashed border-gray-300 bg-white px-5 py-12 text-center">
+              <section className="w-full rounded-xl border border-dashed border-border bg-surface px-5 py-12 text-center">
                 <h2 className="font-bold uppercase">No matching jerseys</h2>
                 <p className="mt-2 text-sm text-muted-text">
                   Remove a filter or clear all filters to see more products.

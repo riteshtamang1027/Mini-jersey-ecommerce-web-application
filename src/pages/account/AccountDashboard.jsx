@@ -21,7 +21,7 @@ function AccountDashboard() {
   };
 
   return (
-    <main className="min-h-[60vh] bg-[#f5f6f3] px-4 py-10 sm:px-8 sm:py-14 lg:px-16">
+    <main className="min-h-[60vh] px-4 py-10 sm:px-8 sm:py-14 lg:px-16">
       <div className="mx-auto max-w-6xl">
         <p className="text-xs font-bold uppercase tracking-[0.2em] text-secondary">
           KITHAUS member space
@@ -34,7 +34,7 @@ function AccountDashboard() {
         </p>
 
         <div className="mt-8 grid gap-6 lg:grid-cols-[340px_minmax(0,1fr)]">
-          <section className="h-fit rounded-xl border border-gray-200 bg-white p-5 sm:p-6">
+          <section className="h-fit rounded-xl border border-border bg-surface p-5 shadow-lg shadow-black/10 sm:p-6">
             <div className="flex items-center gap-3">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary/10 text-secondary">
                 <UserRound size={21} />
@@ -53,7 +53,7 @@ function AccountDashboard() {
                   name="name"
                   autoComplete="name"
                   defaultValue={profile.name}
-                  className="mt-2 h-11 w-full rounded-md border border-gray-300 px-3 text-sm font-normal outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                  className="mt-2 h-11 w-full rounded-md border border-border bg-surface-raised px-3 text-sm font-normal outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                 />
               </label>
               <label className="block text-xs font-semibold">
@@ -64,7 +64,7 @@ function AccountDashboard() {
                   type="email"
                   autoComplete="email"
                   defaultValue={profile.email}
-                  className="mt-2 h-11 w-full rounded-md border border-gray-300 px-3 text-sm font-normal outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                  className="mt-2 h-11 w-full rounded-md border border-border bg-surface-raised px-3 text-sm font-normal outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                 />
               </label>
               <label className="block text-xs font-semibold">
@@ -74,7 +74,7 @@ function AccountDashboard() {
                   type="tel"
                   autoComplete="tel"
                   defaultValue={profile.phone}
-                  className="mt-2 h-11 w-full rounded-md border border-gray-300 px-3 text-sm font-normal outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
+                  className="mt-2 h-11 w-full rounded-md border border-border bg-surface-raised px-3 text-sm font-normal outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/20"
                 />
               </label>
               {saved && (
@@ -91,7 +91,7 @@ function AccountDashboard() {
             </form>
           </section>
 
-          <section className="rounded-xl border border-gray-200 bg-white p-5 sm:p-6">
+          <section className="rounded-xl border border-border bg-surface p-5 shadow-lg shadow-black/10 sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <div>
                 <h2 className="text-lg font-black uppercase">Order history</h2>
@@ -103,7 +103,7 @@ function AccountDashboard() {
             </div>
 
             {orders.length === 0 ? (
-              <div className="mt-6 rounded-lg bg-gray-50 px-4 py-10 text-center">
+              <div className="mt-6 rounded-lg bg-surface-raised px-4 py-10 text-center">
                 <p className="font-semibold">No orders yet</p>
                 <p className="mt-2 text-sm text-muted-text">
                   Once you place a demo order, it will appear here.
@@ -120,7 +120,7 @@ function AccountDashboard() {
                 {orders.map((order) => (
                   <article
                     key={order.id}
-                    className="rounded-lg border border-gray-200 p-4 sm:p-5"
+                    className="rounded-lg border border-border bg-surface-raised/40 p-4 sm:p-5"
                   >
                     <div className="flex flex-wrap items-start justify-between gap-3">
                       <div>
@@ -133,7 +133,7 @@ function AccountDashboard() {
                         {order.status}
                       </span>
                     </div>
-                    <ul className="mt-4 space-y-2 border-t border-gray-100 pt-4">
+                    <ul className="mt-4 space-y-2 border-t border-border pt-4">
                       {order.items.map((item) => (
                         <li
                           key={`${order.id}-${item.id}`}
@@ -155,7 +155,7 @@ function AccountDashboard() {
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-4 flex justify-between border-t border-gray-100 pt-4 text-sm font-bold">
+                    <div className="mt-4 flex justify-between border-t border-border pt-4 text-sm font-bold">
                       <span>Total</span>
                       <span>{formatPrice(order.total)}</span>
                     </div>

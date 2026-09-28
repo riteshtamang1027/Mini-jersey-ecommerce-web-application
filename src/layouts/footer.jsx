@@ -97,7 +97,7 @@ export default function Footer() {
   }, [info]);
 
   return (
-    <div className="mt-12 border-t border-gray-200 bg-gray-50 font-archivo">
+    <div className="mt-12 border-t border-border bg-surface font-archivo">
       <footer className="mx-auto max-w-[1440px] px-4 pt-10 sm:px-8 sm:pt-12 lg:px-16">
         <section className="grid grid-cols-2 gap-x-6 gap-y-10 sm:gap-x-10 lg:grid-cols-4 lg:gap-12">
           <div className="col-span-2 flex w-full flex-col items-start gap-4 lg:col-span-1">
@@ -140,7 +140,7 @@ export default function Footer() {
           ))}
         </section>
 
-        <section className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-gray-200 py-5 text-center sm:mt-12 sm:flex-row sm:text-left">
+        <section className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-border py-5 text-center sm:mt-12 sm:flex-row sm:text-left">
           <p className="text-[10px] leading-5 text-muted-text sm:text-xs">
             © 2026 KITHAUS. FRONTEND STORE DEMO.
           </p>
@@ -161,7 +161,7 @@ export default function Footer() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="footer-info-title"
-            className="w-full max-w-md rounded-xl bg-white p-6 shadow-2xl"
+            className="w-full max-w-md rounded-xl border border-border bg-surface p-6 shadow-2xl shadow-black/30"
           >
             <div className="flex items-start justify-between gap-4">
               <h2 id="footer-info-title" className="text-xl font-black uppercase">
@@ -171,7 +171,7 @@ export default function Footer() {
                 type="button"
                 aria-label="Close information"
                 onClick={() => setActiveInfo(null)}
-                className="rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-900"
+                className="rounded p-1 text-muted-text hover:bg-surface-raised hover:text-foreground"
               >
                 <X size={20} />
               </button>

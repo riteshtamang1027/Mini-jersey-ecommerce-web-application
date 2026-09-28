@@ -24,7 +24,7 @@ export default function Category() {
          {category.map((item) => (
           <div
             key={item.title}
-            className="group flex min-w-0 flex-col gap-2 overflow-hidden rounded-lg border border-gray-300"
+            className="group flex min-w-0 flex-col gap-2 overflow-hidden rounded-lg border border-border bg-surface shadow-sm shadow-black/10 transition duration-300 hover:-translate-y-1 hover:border-secondary/50 hover:shadow-xl hover:shadow-black/20"
           >
             <Link
               to={item.href}

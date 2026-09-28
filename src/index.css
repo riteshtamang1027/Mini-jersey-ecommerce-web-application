@@ -1,15 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @import "tailwindcss";
 
 @theme{
-  --font-archivo: "Archivo", sans-serif;
+  --font-archivo: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-border: var(--border-color);
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-muted-text: var(--muted-text);
@@ -17,13 +19,16 @@
 }
 
 :root {
-  --background: oklch(0.976 0.008 85);
-  --foreground: oklch(0.19 0.025 250);
-  --surface: oklch(0.95 0.012 245);
+  color-scheme: dark;
+  --background: oklch(0.16 0.025 255);
+  --foreground: oklch(0.94 0.01 250);
+  --surface: oklch(0.205 0.026 255);
+  --surface-raised: oklch(0.245 0.028 255);
+  --border-color: oklch(0.34 0.025 255);
   --primary: oklch(0.99 0.004 85);
   --secondary: oklch(0.7072 0.1679 242.04);
-  --muted-text: oklch(0.53 0.025 250);
-  --muted-background: oklch(0.25 0.03 250);
+  --muted-text: oklch(0.72 0.025 250);
+  --muted-background: oklch(0.26 0.03 250);
 }
 
 html {
@@ -33,7 +38,10 @@ html {
 
 body {
   margin: 0;
-  background: var(--background);
+  min-width: 320px;
+  background:
+    radial-gradient(ellipse at 50% -24%, oklch(0.25 0.045 252 / 55%), transparent 58%),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-archivo), sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -44,6 +52,25 @@ a,
 input,
 select {
   -webkit-tap-highlight-color: transparent;
+}
+
+a,
+button,
+input,
+select {
+  transition-property: color, background-color, border-color, box-shadow;
+  transition-duration: 180ms;
+  transition-timing-function: ease;
+}
+
+input,
+select,
+textarea {
+  color: var(--foreground);
+}
+
+input::placeholder {
+  color: var(--muted-text);
 }
 
 :focus-visible {

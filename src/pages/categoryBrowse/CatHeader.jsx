@@ -19,7 +19,7 @@ export default function CatHeader({
             Browse by popularity, trending, latest drops, price, or name
           </p>
         </div>
-        <label className="flex w-full items-center justify-between gap-3 rounded-lg border border-gray-300 bg-gray-100 px-3 py-2 sm:w-auto sm:justify-start sm:px-4">
+        <label className="flex w-full items-center justify-between gap-3 rounded-lg border border-border bg-surface px-3 py-2 sm:w-auto sm:justify-start sm:px-4">
           <span className="text-xs font-semibold text-muted-text sm:text-sm">
             SORT BY
           </span>

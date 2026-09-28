@@ -35,7 +35,7 @@ export default function NewsLetter() {
           drops. Subscriptions are stored on this device only.
         </p>
         <form onSubmit={subscribe} className="flex w-full flex-col gap-2 sm:flex-row">
-          <input name="email" autoComplete="email" className="h-11 min-w-0 flex-1 rounded-lg border border-gray-200 px-4 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30" type="email" required aria-label="Email address" placeholder="Enter your email address" />
+          <input name="email" autoComplete="email" className="h-11 min-w-0 flex-1 rounded-lg border border-border bg-surface px-4 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30" type="email" required aria-label="Email address" placeholder="Enter your email address" />
           <button type="submit" className="h-11 shrink-0 rounded-lg bg-secondary px-5 text-sm font-semibold text-white">SUBSCRIBE</button>
         </form>
         <p aria-live="polite" className="min-h-5 text-xs font-semibold text-secondary">{status}</p>

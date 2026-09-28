@@ -39,20 +39,20 @@ function ProductActions({
         type="button"
         aria-expanded={customizationOpen}
         onClick={onToggleCustomization}
-        className="flex h-10 w-full items-center justify-center gap-2 rounded border border-black text-[10px] font-black uppercase hover:bg-black hover:text-white"
+        className="flex h-10 w-full items-center justify-center gap-2 rounded border border-border text-[10px] font-black uppercase transition-colors hover:border-foreground hover:bg-foreground hover:text-background"
       >
         <SlidersHorizontal size={13} />
         {customizationOpen ? "Close Jersey Customizer" : "Add Name & Number"}
       </button>
 
       {customizationOpen && (
-        <div className="grid grid-cols-2 gap-3 rounded border border-gray-200 bg-gray-50 p-3">
+        <div className="grid grid-cols-2 gap-3 rounded border border-border bg-surface p-3">
           <label className="text-[9px] font-bold uppercase tracking-wide">
             Back name
             <input
               value={printName}
               onChange={(event) => onPrintNameChange(event.target.value.slice(0, 12))}
-              className="mt-1 h-9 w-full rounded border border-gray-300 bg-white px-2 text-xs font-normal uppercase"
+              className="mt-1 h-9 w-full rounded border border-border bg-surface-raised px-2 text-xs font-normal uppercase"
               aria-label="Name to print on jersey"
               placeholder="e.g. RIVERA"
             />
@@ -75,13 +75,13 @@ function ProductActions({
                   onPrintNumberChange(nextValue);
                 }
               }}
-              className="mt-1 h-9 w-full rounded border border-gray-300 bg-white px-2 text-xs font-normal"
+              className="mt-1 h-9 w-full rounded border border-border bg-surface-raised px-2 text-xs font-normal"
               aria-label="Number to print on jersey"
               placeholder="10"
               inputMode="numeric"
             />
           </label>
-          <p className="col-span-2 text-[9px] leading-4 text-gray-500">
+          <p className="col-span-2 text-[9px] leading-4 text-muted-text">
             Personalization is saved with your cart item in this demo. No extra charge.
           </p>
         </div>

@@ -19,7 +19,7 @@ function JerseyProduct({ getProduct }) {
     .slice(0, 3);
 
   return (
-    <main className="min-h-screen bg-[#f5f6f3] text-[#161a18]">
+    <main className="min-h-screen">
       <div className="mx-auto max-w-[1440px] px-4 pt-5 sm:px-6 lg:px-10">
         <Link
           to={product.category.toLowerCase().includes("national") ? "/nationalTeam" : "/clubKits"}

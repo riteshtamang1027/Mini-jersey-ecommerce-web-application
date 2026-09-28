@@ -58,7 +58,7 @@ function Filters({ products, selectedFilters, onFilterChange }) {
         if (options.length === 0) return null;
 
         return (
-          <fieldset key={filter.key} className="border-b border-gray-200">
+          <fieldset key={filter.key} className="border-b border-border">
             <legend className="flex w-full items-center justify-between font-bold uppercase tracking-tight">
               {filter.title}
               <ChevronUp

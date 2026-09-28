@@ -6,7 +6,7 @@ export default function CustomLabBanner() {
   return (
       <section className="mx-auto grid w-full max-w-[1440px] grid-cols-1 items-center gap-6 px-4 font-archivo sm:gap-8 sm:px-8 md:grid-cols-2 lg:gap-12 lg:px-16">
         {/* image */}
-        <div className="aspect-[4/3] min-w-0 overflow-hidden rounded-xl bg-gray-100">
+        <div className="aspect-[4/3] min-w-0 overflow-hidden rounded-xl bg-surface">
           <img className="h-full w-full object-cover" src={image} alt="Custom football jersey design workspace" />
         </div>
 

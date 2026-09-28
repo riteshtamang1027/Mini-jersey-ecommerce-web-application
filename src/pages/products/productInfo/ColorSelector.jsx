@@ -10,7 +10,7 @@ function ColorSelector({
           Colorway
         </span>
 
-        <span className="text-[11px] text-gray-500">
+        <span className="text-[11px] text-muted-text">
           {colors[selectedColor].name}
         </span>
       </div>

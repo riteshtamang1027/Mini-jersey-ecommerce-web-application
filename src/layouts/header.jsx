@@ -70,10 +70,10 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="bg-white/95 shadow-sm backdrop-blur">
+    <header className="border-b border-border/70 bg-background/95 shadow-lg shadow-black/10 backdrop-blur-xl">
       {/* upper header section */}
       <section className="w-full bg-surface font-archivo">
-        <div className="flex items-center justify-between px-4 py-2 text-[10px] font-semibold text-gray-600 sm:px-8 sm:text-xs lg:px-16 lg:py-1">
+        <div className="flex items-center justify-between px-4 py-2 text-[10px] font-semibold text-muted-text sm:px-8 sm:text-xs lg:px-16 lg:py-1">
           <div className="flex items-center gap-2">
             <Truck size={16} />{" "}
             <span>KITHAUS FOOTBALL CULTURE · 2026</span>
@@ -83,7 +83,7 @@ export default function Header() {
         </div>
       </section>
 
-      <nav className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-gray-200 px-4 py-3 sm:px-8 lg:flex-nowrap lg:gap-4 lg:px-16 lg:py-4">
+      <nav className="flex flex-wrap items-center justify-between gap-x-4 gap-y-3 border-b border-border px-4 py-3 sm:px-8 lg:flex-nowrap lg:gap-4 lg:px-16 lg:py-4">
         {/* badge or logo */}
 
         <BrandMark />
@@ -102,14 +102,14 @@ export default function Header() {
           {/* search section */}
           <form onSubmit={submitSearch} className="relative hidden w-max sm:block">
             <input
-              className="h-9 w-36 rounded-full border border-gray-300 bg-gray-50 py-1 pl-3 pr-9 text-xs text-black/70 placeholder:text-gray-400 focus:border-secondary focus:outline-none md:w-44"
+              className="h-9 w-36 rounded-full border border-border bg-surface-raised py-1 pl-3 pr-9 text-xs text-foreground placeholder:text-muted-text focus:border-secondary focus:outline-none md:w-44"
               type="search"
               value={searchTerm}
               onChange={(event) => setSearchTerm(event.target.value)}
               placeholder="Search kits..."
               aria-label="Search kits"
             />
-            <button type="submit" aria-label="Submit search" className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-500 hover:text-secondary">
+            <button type="submit" aria-label="Submit search" className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-text hover:text-secondary">
               <Search size={15} />
             </button>
           </form>
@@ -117,7 +117,7 @@ export default function Header() {
           <Link
             to="/account"
             aria-label="Account dashboard"
-            className="text-gray-800 hover:text-secondary"
+            className="text-foreground hover:text-secondary"
           >
             <CircleUser size={20} />
           </Link>
@@ -126,7 +126,7 @@ export default function Header() {
             aria-label={`Shopping bag${
               itemCount ? `, ${itemCount} ${itemCount === 1 ? "item" : "items"}` : ""
             }`}
-            className="relative text-gray-800 hover:text-secondary"
+            className="relative text-foreground hover:text-secondary"
           >
             <ShoppingCart size={20} />
             {itemCount > 0 && (
@@ -142,7 +142,7 @@ export default function Header() {
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setIsMenuOpen((open) => !open)}
-            className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary lg:hidden"
+            className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary lg:hidden"
           >
             {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -169,13 +169,13 @@ export default function Header() {
             aria-modal={isMenuOpen || undefined}
             inert={!isMenuOpen}
             role="dialog"
-            className={`absolute inset-y-0 right-0 flex w-[min(20rem,85vw)] flex-col bg-white px-6 py-6 shadow-2xl transition-transform duration-300 ease-in-out ${
+            className={`absolute inset-y-0 right-0 flex w-[min(20rem,85vw)] flex-col border-l border-border bg-surface px-6 py-6 shadow-2xl shadow-black/30 transition-transform duration-300 ease-in-out ${
               isMenuOpen
                 ? "pointer-events-auto translate-x-0"
                 : "pointer-events-none translate-x-full"
             }`}
           >
-            <div className="mb-8 flex items-center justify-between border-b border-gray-200 pb-5">
+            <div className="mb-8 flex items-center justify-between border-b border-border pb-5">
               <span className="text-xs font-bold uppercase tracking-[0.18em] text-muted-text">
                 Navigation
               </span>
@@ -183,14 +183,14 @@ export default function Header() {
                 type="button"
                 aria-label="Close navigation menu"
                 onClick={closeMenu}
-                className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
+                className="flex h-10 w-10 items-center justify-center rounded-md hover:bg-surface-raised focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary"
               >
                 <X size={22} />
               </button>
             </div>
 
-            <form onSubmit={submitSearch} className="mb-5 flex items-center gap-2 rounded-lg border border-gray-200 px-3">
-              <Search size={17} className="shrink-0 text-gray-400" />
+            <form onSubmit={submitSearch} className="mb-5 flex items-center gap-2 rounded-lg border border-border px-3">
+              <Search size={17} className="shrink-0 text-muted-text" />
               <input
                 type="search"
                 value={searchTerm}
@@ -209,25 +209,25 @@ export default function Header() {
                   to={item.link}
                   onClick={closeMenu}
                   className={({ isActive }) =>
-                    `border-b border-gray-100 py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${
+                    `border-b border-border py-4 text-sm font-semibold uppercase tracking-wide transition-colors ${
                       isActive
                         ? "text-secondary"
-                        : "text-gray-800 hover:text-secondary"
+                        : "text-foreground hover:text-secondary"
                     }`
                   }
                 >
-                  <span className="mr-4 text-xs text-gray-400">
+                  <span className="mr-4 text-xs text-muted-text">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                   {item.label}
                 </NavLink>
               ))}
             </div>
-            <div className="mt-auto grid grid-cols-2 gap-3 border-t border-gray-200 pt-5">
+            <div className="mt-auto grid grid-cols-2 gap-3 border-t border-border pt-5">
               <Link
                 to="/account"
                 onClick={closeMenu}
-                className="flex items-center justify-center gap-2 rounded-md border border-gray-200 px-3 py-3 text-xs font-bold uppercase"
+                className="flex items-center justify-center gap-2 rounded-md border border-border px-3 py-3 text-xs font-bold uppercase hover:border-secondary hover:text-secondary"
               >
                 <CircleUser size={16} /> Account
               </Link>
